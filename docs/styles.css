@@ -3,42 +3,60 @@
   --card:#ffffff;
   --accent:#7b3fe4;
   --muted:#6b7280;
+  --text:#0f172a;
 }
+
 *{box-sizing:border-box}
 html,body{height:100%}
 body{
   margin:0;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   background: linear-gradient(180deg,var(--bg),#eef0ff);
-  color:#0f172a;
+  color:var(--text);
   -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
-.container{
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  padding:3rem 1rem;
+
+/* Skip link for accessibility */
+.skip-link{
+  position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;
 }
-.site-header{text-align:center;margin-bottom:2rem}
-.site-header h1{font-size:2.25rem;margin:0;color:var(--accent)}
-.site-header .date{margin-top:.25rem;color:var(--muted)}
-.hero{
-  background:var(--card);
-  padding:2rem;
-  border-radius:12px;
-  box-shadow:0 8px 24px rgba(15,23,42,0.06);
-  max-width:720px;
-  text-align:center;
-}
-.hero h2{margin:.25rem 0;font-size:1.5rem}
-.lead{color:var(--muted);margin:0.5rem 0}
-.cta{display:inline-block;margin-top:1rem;padding:.5rem 1rem;border-radius:999px;background:linear-gradient(90deg,var(--accent),#5a2dd6);color:#fff;font-weight:600}
-.info{max-width:720px;margin-top:1.25rem;color:var(--muted);text-align:left}
-.site-footer{margin-top:2rem;text-align:center;color:var(--muted)}
-.small{font-size:.9rem}
+.skip-link:focus{position:static;width:auto;height:auto;padding:.5rem 1rem;background:#111;color:#fff;border-radius:6px;z-index:9999}
+
+.top-nav{position:sticky;top:0;background:rgba(255,255,255,0.7);backdrop-filter:saturate(140%) blur(6px);border-bottom:1px solid rgba(15,23,42,0.04)}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:.75rem 1rem}
+.brand{font-weight:700;color:var(--accent);text-decoration:none}
+.links a{margin-left:1rem;color:var(--text);text-decoration:none}
+
+.hero{position:relative;width:100%;height:70vh;min-height:420px;display:block;overflow:hidden}
+.hero-img{width:100%;height:100%;object-fit:cover;display:block}
+.hero-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center;padding:1rem;background:linear-gradient(180deg,rgba(0,0,0,0.18),rgba(0,0,0,0.45))}
+.names{font-size:2.25rem;margin:0;font-weight:700;letter-spacing:0.02em}
+.wedding-date{margin-top:.5rem;background:rgba(255,255,255,0.12);padding:.35rem .8rem;border-radius:999px;font-weight:600}
+
+.section{padding:3rem 1rem;background:transparent}
+.section.alt{background:linear-gradient(180deg,rgba(250,250,255,0.5),rgba(242,242,255,0.6))}
+.section-inner{max-width:900px;margin:0 auto}
+h2{font-size:1.5rem;margin:0 0 .5rem}
+.muted{color:var(--muted);margin:0 0 .25rem}
+.venue{font-weight:600;margin:0}
+.time{margin:0.5rem 0 1rem}
+.map-link{display:inline-block;padding:.5rem 1rem;background:var(--accent);color:#fff;border-radius:8px;text-decoration:none}
+
+.rsvp-embed{margin-top:1rem;border:1px solid rgba(15,23,42,0.06);border-radius:8px;overflow:hidden}
+.rsvp-embed iframe{width:100%;min-height:500px;border:0}
+
+.site-footer{border-top:1px solid rgba(15,23,42,0.04);padding:1.25rem 1rem;background:transparent}
+.footer-inner{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:.5rem}
+.contacts a{color:var(--accent);text-decoration:none}
+.small{font-size:.9rem;color:var(--muted)}
+
 @media (min-width:720px){
-  .container{padding:6rem 1rem}
-  .site-header h1{font-size:3rem}
+  .hero{height:80vh}
+  .names{font-size:3.25rem}
+  .rsvp-embed iframe{min-height:640px}
+  .footer-inner{flex-direction:row;justify-content:space-between;align-items:center}
 }
+
+/* Smooth scrolling for in-page links */
+html{scroll-behavior:smooth}

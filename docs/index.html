@@ -7,29 +7,76 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <header class="site-header">
-      <h1>Gabriela &amp; Patryk</h1>
-      <p class="date">17.07.2026</p>
-    </header>
+  <a class="skip-link" href="#main">Przejdź do treści</a>
 
-    <main>
-      <section class="hero">
-        <h2>Zapraszamy serdecznie</h2>
-        <p class="lead">Cieszymy się, że chcesz świętować z nami ten dzień.</p>
-        <p class="cta">17 lipca 2026</p>
-      </section>
+  <header class="top-nav">
+    <div class="nav-inner">
+      <a href="#hero" class="brand">Gabriela &amp; Patryk</a>
+      <nav class="links">
+        <a href="#slub">Ślub</a>
+        <a href="#wesele">Wesele</a>
+        <a href="#rsvp">RSVP</a>
+      </nav>
+    </div>
+  </header>
 
-      <section class="info">
-        <h3>Informacje</h3>
-        <p>Ta strona jest statyczną wizytówką przygotowaną do publikacji na GitHub Pages. Wkrótce dodamy więcej szczegółów dotyczących ceremonii, przyjęcia oraz informacji dla gości.</p>
-      </section>
-    </main>
+  <main id="main">
+    <!-- HERO / Big photo -->
+    <section id="hero" class="hero">
+      <img id="hero-img" class="hero-img" src="https://via.placeholder.com/1600x900?text=Your+photo+here" alt="Gabriela i Patryk">
+      <div class="hero-overlay">
+        <h1 class="names">Gabriela &amp; Patryk</h1>
+        <p class="wedding-date">17.07.2026</p>
+      </div>
+    </section>
 
-    <footer class="site-footer">
-      <p>Gabriela &amp; Patryk • 17.07.2026</p>
-      <p class="small">Strona przykładowa — gotowa do publikacji na GitHub Pages.</p>
-    </footer>
-  </div>
+    <!-- ŚLUB -->
+    <section id="slub" class="section">
+      <div class="section-inner">
+        <h2>Ślub</h2>
+        <p class="muted">Miejsce ceremonii:</p>
+        <p class="venue">Kościół św. Maksymiliana Marii Kolbego, Kraków</p>
+        <p class="time">17.07.2026, godz. 14:00</p>
+        <p><a class="map-link" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=Ko%C5%9Bci%C3%B3%C5%82+%C5%9Bw.+Maksymiliana+Marii+Kolbego+Krak%C3%B3w">Pokaż trasę w Google Maps →</a></p>
+      </div>
+    </section>
+
+    <!-- WESELE -->
+    <section id="wesele" class="section alt">
+      <div class="section-inner">
+        <h2>Wesele</h2>
+        <p class="muted">Miejsce przyjęcia:</p>
+        <p class="venue">Stary Dwór Poręba Żegoty</p>
+        <p class="time">17.07.2026, godz. 17:00</p>
+      </div>
+    </section>
+
+    <!-- RSVP -->
+    <section id="rsvp" class="section">
+      <div class="section-inner">
+        <h2>RSVP</h2>
+        <p class="muted">Potwierdź swoją obecność (formularz Google)</p>
+        <!-- Replace YOUR_FORM_ID with actual Google Forms embedded link -->
+        <div class="rsvp-embed">
+          <iframe title="Formularz RSVP" src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Wczytywanie formularza…</iframe>
+        </div>
+        <p class="muted small">Jeśli formularz nie ładuje się, <a target="_blank" rel="noopener" href="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform">otwórz formularz w nowej karcie</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <p class="names small">Gabriela &amp; Patryk • 17.07.2026</p>
+      </div>
+      <div class="contacts">
+        <p>Telefon: <a href="tel:+48123456789">+48 123 456 789</a></p>
+        <p>Email: <a href="mailto:kontakt@example.com">kontakt@example.com</a></p>
+        <p>Instagram: <a href="https://instagram.com/placeholder" target="_blank" rel="noopener">@placeholder</a></p>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
