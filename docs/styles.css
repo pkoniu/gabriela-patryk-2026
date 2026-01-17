@@ -6,6 +6,15 @@
   --text:#0f172a;
 }
 
+/* Load 'The Seasons' from local fonts/ directory (single file provided). */
+@font-face {
+  font-family: 'The Seasons';
+  src: url('fonts/theseasons.ttf') format('opentype');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 *{box-sizing:border-box}
 html,body{height:100%}
 body{
@@ -21,6 +30,7 @@ body{
 .skip-link{
   position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;
 }
+
 .skip-link:focus{position:static;width:auto;height:auto;padding:.5rem 1rem;background:#111;color:#fff;border-radius:6px;z-index:9999}
 
 .top-nav{position:sticky;top:0;background:rgba(255,255,255,0.7);backdrop-filter:saturate(140%) blur(6px);border-bottom:1px solid rgba(15,23,42,0.04)}
@@ -30,9 +40,10 @@ body{
 
 .hero{position:relative;width:100%;height:70vh;min-height:420px;display:block;overflow:hidden}
 .hero-img{width:100%;height:100%;object-fit:cover;display:block}
-.hero-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center;padding:1rem;background:linear-gradient(180deg,rgba(0,0,0,0.18),rgba(0,0,0,0.45))}
-.names{font-size:2.25rem;margin:0;font-weight:700;letter-spacing:0.02em}
-.wedding-date{margin-top:.5rem;background:rgba(255,255,255,0.12);padding:.35rem .8rem;border-radius:999px;font-weight:600}
+.hero-overlay{position:absolute;top:0;right:0;left:auto;display:flex;flex-direction:column;align-items:flex-end;justify-content:flex-start;color:#fff;text-align:right;padding:1.25rem;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,0.0),rgba(0,0,0,0.14));}
+.overlay-inner{pointer-events:auto;max-width:48ch;padding:0.5rem 0}
+.names{font-size:3.2rem;margin:0;font-weight:700;letter-spacing:0.02em;text-shadow:0 2px 10px rgba(0,0,0,0.45);font-family:'The Seasons', 'Great Vibes', cursive}
+.wedding-date{margin-top:0.45rem;color:#fff;font-weight:600;text-shadow:0 1px 6px rgba(0,0,0,0.35);font-family:'The Seasons', 'Great Vibes', cursive}
 
 .section{padding:3rem 1rem;background:transparent}
 .section.alt{background:linear-gradient(180deg,rgba(250,250,255,0.5),rgba(242,242,255,0.6))}
@@ -51,11 +62,21 @@ h2{font-size:1.5rem;margin:0 0 .5rem}
 .contacts a{color:var(--accent);text-decoration:none}
 .small{font-size:.9rem;color:var(--muted)}
 
+
 @media (min-width:720px){
   .hero{height:80vh}
-  .names{font-size:3.25rem}
+  /* Double the previous desktop size to match the request */
+  .names{font-size:5.8rem}
+  .wedding-date{font-size:2.2rem}
   .rsvp-embed iframe{min-height:640px}
   .footer-inner{flex-direction:row;justify-content:space-between;align-items:center}
+}
+
+@media (max-width:519px){
+  /* Slightly reduce overlay size on very small screens */
+  .hero-overlay{padding:.75rem}
+  .names{font-size:1.35rem}
+  .wedding-date{font-size:.95rem}
 }
 
 /* Smooth scrolling for in-page links */

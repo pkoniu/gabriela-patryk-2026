@@ -23,10 +23,18 @@
   <main id="main">
     <!-- HERO / Big photo -->
     <section id="hero" class="hero">
-      <img id="hero-img" class="hero-img" src="https://via.placeholder.com/1600x900?text=Your+photo+here" alt="Gabriela i Patryk">
-      <div class="hero-overlay">
-        <h1 class="names">Gabriela &amp; Patryk</h1>
-        <p class="wedding-date">17.07.2026</p>
+      <!--
+        Using Cloudinary transformations to optimize the image and add text overlays
+        Top-right overlays for name and date (gravity north_east with offsets)
+      -->
+      <img id="hero-img" class="hero-img"
+        src="https://res.cloudinary.com/u1xquazi/image/upload/w_1600,h_900,c_fill,g_auto,f_auto,q_auto,dpr_auto,fl_progressive/v1768682283/IMG_1220_qjq54c.jpg"
+        alt="Gabriela i Patryk">
+      <div class="hero-overlay" aria-hidden="false">
+        <div class="overlay-inner">
+          <h1 class="names">Gabriela &amp; Patryk</h1>
+          <p class="wedding-date">17.07.2026</p>
+        </div>
       </div>
     </section>
 
