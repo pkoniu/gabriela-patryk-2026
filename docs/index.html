@@ -10,14 +10,20 @@
   <a class="skip-link" href="#main">Przejdź do treści</a>
 
   <header class="top-nav">
-    <div class="nav-inner">
-      <a href="#hero" class="brand">Gabriela &amp; Patryk</a>
-      <nav class="links">
-        <a href="#slub">Ślub</a>
-        <a href="#wesele">Wesele</a>
-        <a href="#rsvp">RSVP</a>
-      </nav>
-    </div>
+      <div class="nav-inner">
+        <nav class="nav-left">
+          <a href="#slub">Ślub</a>
+          <a href="#wesele">Wesele</a>
+        </nav>
+
+  <!-- centered logo (use invitation/logo.png/svg) -->
+  <img class="header-logo" src="invitation/logo.svg" alt="Logo">
+
+        <nav class="nav-right">
+          <a href="#rsvp">RSVP</a>
+          <a href="#rsvp">Kontakt</a>
+        </nav>
+      </div>
   </header>
 
   <main id="main">
@@ -28,63 +34,66 @@
         Top-right overlays for name and date (gravity north_east with offsets)
       -->
       <img id="hero-img" class="hero-img"
-        src="https://res.cloudinary.com/u1xquazi/image/upload/w_1600,h_900,c_fill,g_auto,f_auto,q_auto,dpr_auto,fl_progressive/v1768682283/IMG_1220_qjq54c.jpg"
+        src="https://res.cloudinary.com/u1xquazi/image/upload/g_auto,f_auto,q_auto,dpr_auto,fl_progressive/v1768682283/IMG_1220_qjq54c.jpg"
         alt="Gabriela i Patryk">
       <div class="hero-overlay" aria-hidden="false">
         <div class="overlay-inner">
-          <h1 class="names">Gabriela &amp; Patryk</h1>
-          <p class="wedding-date">17.07.2026</p>
+            <h1 class="names">Gabriela &amp; Patryk</h1>
+            <p class="wedding-date">17.07.2026</p>
+          </div>
+        </div>
+    </section>
+
+    <!-- INVITATION SHEET 1: church (ecru, black text) -->
+    <section id="slub" class="section inv-card inv-ecru">
+      <div class="section-inner">
+        <div class="card">
+          <h2>Ślub</h2>
+          <p class="muted">Miejsce ceremonii</p>
+          <p class="venue">Kościół św. Maksymiliana Marii Kolbego, Kraków</p>
+          <p class="time">17.07.2026, godz. 14:00</p>
+          <p><a class="map-link" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=Ko%C5%9Bci%C3%B3%C5%82+%C5%9Bw.+Maksymiliana+Marii+Kolbego+Krak%C3%B3w">Pokaż trasę w Google Maps →</a></p>
+        </div>
+      </div>
+    </section>
+    <!-- (Kontakt moved into RSVP section per design) -->
+
+    <!-- INVITATION SHEET 2: party (grey, black text) -->
+    <section id="wesele" class="section inv-card inv-grey">
+      <div class="section-inner">
+        <div class="card">
+          <h2>Wesele</h2>
+          <p class="muted">Miejsce przyjęcia</p>
+          <p class="venue">Stary Dwór Poręba Żegoty</p>
+          <p class="time">17.07.2026, godz. 17:00</p>
+          <p><a class="map-link" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=Stary+Dw%C3%B3r+Por%C4%99ba+%C5%BBegoty">Pokaż trasę w Google Maps →</a></p>
         </div>
       </div>
     </section>
 
-    <!-- ŚLUB -->
-    <section id="slub" class="section">
+    <!-- INVITATION SHEET 3: RSVP + contact + QR (black, white text) -->
+    <section id="rsvp" class="section inv-card inv-black">
       <div class="section-inner">
-        <h2>Ślub</h2>
-        <p class="muted">Miejsce ceremonii:</p>
-        <p class="venue">Kościół św. Maksymiliana Marii Kolbego, Kraków</p>
-        <p class="time">17.07.2026, godz. 14:00</p>
-        <p><a class="map-link" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=Ko%C5%9Bci%C3%B3%C5%82+%C5%9Bw.+Maksymiliana+Marii+Kolbego+Krak%C3%B3w">Pokaż trasę w Google Maps →</a></p>
-      </div>
-    </section>
+        <div class="card card-dark">
+          <h2>RSVP</h2>
+          <p class="muted">Potwierdź swoją obecność</p>
+          <div class="rsvp-embed">
+            <!-- Replace YOUR_FORM_ID with actual Google Forms embedded link -->
+            <iframe title="Formularz RSVP" src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Wczytywanie formularza…</iframe>
+          </div>
 
-    <!-- WESELE -->
-    <section id="wesele" class="section alt">
-      <div class="section-inner">
-        <h2>Wesele</h2>
-        <p class="muted">Miejsce przyjęcia:</p>
-        <p class="venue">Stary Dwór Poręba Żegoty</p>
-        <p class="time">17.07.2026, godz. 17:00</p>
-      </div>
-    </section>
-
-    <!-- RSVP -->
-    <section id="rsvp" class="section">
-      <div class="section-inner">
-        <h2>RSVP</h2>
-        <p class="muted">Potwierdź swoją obecność (formularz Google)</p>
-        <!-- Replace YOUR_FORM_ID with actual Google Forms embedded link -->
-        <div class="rsvp-embed">
-          <iframe title="Formularz RSVP" src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Wczytywanie formularza…</iframe>
+          <div class="contact-qr">
+              <div class="contact">
+                <h3>Kontakt</h3>
+                <p>Gabriela: <a href="tel:+48123456789">+48 123 456 789</a></p>
+                <p>Patryk: <a href="tel:+48987654321">+48 987 654 321</a></p>
+                <p>Świadek 1: <a href="tel:+48111222333">+48 111 222 333</a></p>
+                <p>Świadek 2: <a href="tel:+48444555666">+48 444 555 666</a></p>
+              </div>
+          </div>
         </div>
-        <p class="muted small">Jeśli formularz nie ładuje się, <a target="_blank" rel="noopener" href="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform">otwórz formularz w nowej karcie</a>.</p>
       </div>
     </section>
   </main>
-
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div>
-        <p class="names small">Gabriela &amp; Patryk • 17.07.2026</p>
-      </div>
-      <div class="contacts">
-        <p>Telefon: <a href="tel:+48123456789">+48 123 456 789</a></p>
-        <p>Email: <a href="mailto:kontakt@example.com">kontakt@example.com</a></p>
-        <p>Instagram: <a href="https://instagram.com/placeholder" target="_blank" rel="noopener">@placeholder</a></p>
-      </div>
-    </div>
-  </footer>
-
 </body>
 </html>
