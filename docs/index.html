@@ -15,15 +15,30 @@
           <a href="#slub">Ślub</a>
           <a href="#wesele">Wesele</a>
         </nav>
-
-  <img class="header-logo" src="invitation/logo-transparent.svg" alt="Logo">
-
+        <a href="#" class="header-logo-link">
+          <img class="header-logo" src="invitation/logo-transparent.svg" alt="Logo">
+        </a>
         <nav class="nav-right">
           <a href="#rsvp">RSVP</a>
-          <a href="#rsvp">Kontakt</a>
+          <a href="#kontakt">Kontakt</a>
         </nav>
+        <button class="nav-toggle" aria-expanded="false" aria-label="Otwórz menu">
+          <span class="bars" aria-hidden="true">☰</span>
+        </button>
       </div>
   </header>
+
+  <!-- Mobile menu (hidden on desktop) -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-menu-inner">
+      <nav class="mobile-nav">
+        <a href="#slub">Ślub</a>
+        <a href="#wesele">Wesele</a>
+        <a href="#rsvp">RSVP</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+    </div>
+  </div>
 
   <main id="main">
     <!-- HERO / Big photo -->
@@ -81,7 +96,7 @@
             <iframe title="Formularz RSVP" src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Wczytywanie formularza…</iframe>
           </div>
 
-          <div class="contact-qr">
+          <div id="kontakt" class="contact-qr">
               <div class="contact">
                 <h3>Kontakt</h3>
                 <p>Gabriela: <a href="tel:+48123456789">+48 123 456 789</a></p>
@@ -94,5 +109,40 @@
       </div>
     </section>
   </main>
+  <script>
+    // Mobile nav toggle
+    (function() {
+      const navToggle = document.querySelector('.nav-toggle');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const navLinks = document.querySelectorAll('.mobile-nav a');
+
+      function toggleMenu() {
+        const isOpen = mobileMenu.classList.toggle('open');
+        document.body.classList.toggle('mobile-open', isOpen);
+        navToggle.setAttribute('aria-expanded', String(isOpen));
+        mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+      }
+
+      if (navToggle && mobileMenu) {
+        navToggle.addEventListener('click', toggleMenu);
+      }
+
+      // Close menu when a link is clicked
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (document.body.classList.contains('mobile-open')) {
+            toggleMenu();
+          }
+        });
+      });
+
+      // Close on escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && document.body.classList.contains('mobile-open')) {
+          toggleMenu();
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
