@@ -16,6 +16,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Emitha';
+  src: url('fonts/emitha.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 *{box-sizing:border-box}
 html,body{height:100%}
 body{
@@ -67,7 +75,7 @@ main{padding-top:var(--header-height)}
 .section{padding:3rem 1rem;background:transparent}
 .section.alt{background:linear-gradient(180deg,rgba(250,250,255,0.5),rgba(242,242,255,0.6))}
 .section-inner{max-width:900px;margin:0 auto}
-h2{font-size:1.5rem;margin:0 0 .5rem}
+h2{font-size:2.5rem;margin:0 0 .5rem;font-family:'The Seasons', 'Great Vibes', cursive;font-weight:normal;}
 .muted{color:var(--muted);margin:0 0 .25rem}
 .venue{font-weight:600;margin:0}
 .time{margin:0.5rem 0 1rem}
@@ -91,7 +99,12 @@ h2{font-size:1.5rem;margin:0 0 .5rem}
 .inv-black .card a, .inv-black .card .map-link{color:#fff}
 .inv-card h2{margin-top:0}
 .contact-qr{display:flex;gap:1.25rem;align-items:center;margin-top:1.25rem;flex-wrap:wrap}
-.contact{flex:1;min-width:220px}
+.contact{flex:1;min-width:220px;font-family:'Emitha', cursive;font-size:2rem;}
+.contact h3 {
+  font-family: 'Emitha', cursive;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
 .card-dark .rsvp-embed{border-color:rgba(255,255,255,0.08)}
 
 /* Kontakt section */
