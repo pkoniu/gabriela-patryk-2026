@@ -48,7 +48,7 @@
         Top-right overlays for name and date (gravity north_east with offsets)
       -->
       <img id="hero-img" class="hero-img"
-        src="https://res.cloudinary.com/u1xquazi/image/upload/g_auto,f_auto,q_auto,dpr_auto,fl_progressive/v1768682283/IMG_1220_qjq54c.jpg"
+        src="https://res.cloudinary.com/gabriela-patryk-2026/image/upload/w_3840,c_fill,g_auto,f_auto,q_auto,dpr_auto,fl_progressive/v1770765308/IMG_1220_vpcecj.jpg"
         alt="Gabriela i Patryk">
       <div class="hero-overlay" aria-hidden="false">
         <div class="overlay-inner">
@@ -58,15 +58,57 @@
         </div>
     </section>
 
+    <!-- COUNTDOWN -->
+    <section class="section countdown-section" aria-live="polite">
+      <div class="section-inner">
+        <div class="countdown-card">
+          <p class="countdown-label">Do naszego ślubu pozostało</p>
+          <div class="countdown" id="countdown" aria-label="Odliczanie do ślubu">
+            <div class="countdown-item"><span class="countdown-value" id="cd-days">0</span><span class="countdown-unit">dni</span></div>
+            <div class="countdown-item"><span class="countdown-value" id="cd-hours">0</span><span class="countdown-unit">godz.</span></div>
+            <div class="countdown-item"><span class="countdown-value" id="cd-minutes">0</span><span class="countdown-unit">min</span></div>
+            <div class="countdown-item"><span class="countdown-value" id="cd-seconds">0</span><span class="countdown-unit">sek</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTRO SECTION: invitation + photo -->
+    <section id="zaproszenie" class="section intro-section">
+      <div class="section-inner">
+        <div class="intro-grid">
+          <div class="intro-card">
+            <h2>Bądźcie z nami!</h2>
+            <p class="intro-quote">Kocha się nie za cokolwiek, ale pomimo wszystko, kocha się za nic.</p>
+            <p class="muted">Z radością zapraszamy na naszą uroczystość.</p>
+            <p class="intro-line"><strong>Data:</strong> 17.07.2026</p>
+            <p class="intro-line"><strong>Szczegóły:</strong> Poniżej znajdziecie informacje o ceremonii i przyjęciu.</p>
+          </div>
+          <div class="intro-image">
+            <img src="https://res.cloudinary.com/gabriela-patryk-2026/image/upload/w_1600,c_fill,g_auto,f_auto,q_auto,dpr_auto,fl_progressive/v1770765298/IMG_1206_sjsvb8.jpg" alt="Gabriela i Patryk" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- INVITATION SHEET 1: church (ecru, black text) -->
     <section id="slub" class="section inv-card inv-ecru">
       <div class="section-inner">
-        <div class="card">
-          <h2>Ślub</h2>
-          <p class="muted">Miejsce ceremonii</p>
-          <p class="venue">Kościół św. Maksymiliana Marii Kolbego, Kraków</p>
-          <p class="time">17.07.2026, godz. 14:00</p>
-          <p><a class="map-link" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=Ko%C5%9Bci%C3%B3%C5%82+%C5%9Bw.+Maksymiliana+Marii+Kolbego+Krak%C3%B3w">Pokaż trasę w Google Maps →</a></p>
+        <div class="inv-grid">
+          <div class="card">
+            <h2>Ślub</h2>
+            <p class="muted">Miejsce ceremonii</p>
+            <p class="venue">Kościół św. Maksymiliana Marii Kolbego, Kraków</p>
+            <div class="time-actions">
+              <p class="time">17.07.2026, godz. 14:00</p>
+              <a class="calendar-link" href="slub.ics">Dodaj do kalendarza</a>
+            </div>
+            <p><a class="map-link" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=Ko%C5%9Bci%C3%B3%C5%82+%C5%9Bw.+Maksymiliana+Marii+Kolbego+w+Mistrzejowicach">Pokaż trasę w Google Maps →</a></p>
+            <img class="card-corner" src="https://res.cloudinary.com/gabriela-patryk-2026/image/upload/w_360,h_360,c_fill,g_auto,f_auto,q_auto,fl_progressive/v1770767023/kosciol_aszu9x.jpg" alt="Kościół" loading="lazy">
+          </div>
+          <div class="map-embed">
+            <iframe title="Mapa dojazdu do kościoła" src="https://www.google.com/maps?q=Ko%C5%9Bci%C3%B3%C5%82+%C5%9Bw.+Maksymiliana+Marii+Kolbego+w+Mistrzejowicach&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
         </div>
       </div>
     </section>
@@ -75,12 +117,21 @@
     <!-- INVITATION SHEET 2: party (grey, black text) -->
     <section id="wesele" class="section inv-card inv-grey">
       <div class="section-inner">
-        <div class="card">
-          <h2>Wesele</h2>
-          <p class="muted">Miejsce przyjęcia</p>
-          <p class="venue">Stary Dwór Poręba Żegoty</p>
-          <p class="time">17.07.2026, godz. 17:00</p>
-          <p><a class="map-link" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=Stary+Dw%C3%B3r+Por%C4%99ba+%C5%BBegoty">Pokaż trasę w Google Maps →</a></p>
+        <div class="inv-grid">
+          <div class="card">
+            <h2>Wesele</h2>
+            <p class="muted">Miejsce przyjęcia</p>
+            <p class="venue">Stary Dwór Poręba Żegoty</p>
+            <div class="time-actions">
+              <p class="time">17.07.2026, godz. 17:00</p>
+              <a class="calendar-link" href="wesele.ics">Dodaj do kalendarza</a>
+            </div>
+            <p><a class="map-link" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=Stary+Dw%C3%B3r+Por%C4%99ba+%C5%BBegoty">Pokaż trasę w Google Maps →</a></p>
+            <img class="card-corner" src="https://res.cloudinary.com/gabriela-patryk-2026/image/upload/w_360,h_360,c_fill,g_auto,f_auto,q_auto,fl_progressive/v1770767088/sala_tp5mxp.jpg" alt="Sala weselna" loading="lazy">
+          </div>
+          <div class="map-embed">
+            <iframe title="Mapa dojazdu na wesele" src="https://www.google.com/maps?q=Stary+Dw%C3%B3r+Por%C4%99ba+%C5%BBegoty&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
         </div>
       </div>
     </section>
@@ -142,6 +193,33 @@
           toggleMenu();
         }
       });
+    })();
+
+    // Countdown timer
+    (function() {
+      const target = new Date('2026-07-17T14:00:00+02:00').getTime();
+      const daysEl = document.getElementById('cd-days');
+      const hoursEl = document.getElementById('cd-hours');
+      const minutesEl = document.getElementById('cd-minutes');
+      const secondsEl = document.getElementById('cd-seconds');
+
+      function updateCountdown() {
+        const now = Date.now();
+        const diff = Math.max(0, target - now);
+        const totalSeconds = Math.floor(diff / 1000);
+        const days = Math.floor(totalSeconds / 86400);
+        const hours = Math.floor((totalSeconds % 86400) / 3600);
+        const minutes = Math.floor((totalSeconds % 3600) / 60);
+        const seconds = totalSeconds % 60;
+
+        if (daysEl) daysEl.textContent = String(days);
+        if (hoursEl) hoursEl.textContent = String(hours).padStart(2, '0');
+        if (minutesEl) minutesEl.textContent = String(minutes).padStart(2, '0');
+        if (secondsEl) secondsEl.textContent = String(seconds).padStart(2, '0');
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
     })();
   </script>
 </body>
