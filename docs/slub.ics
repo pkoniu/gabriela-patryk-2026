@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Gabriela i Patryk//Wedding//PL
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:slub-gabryski-i-patryka-20260717T140000@gabriela-patryk
+DTSTAMP:20260211T120000Z
+DTSTART;TZID=Europe/Warsaw:20260717T140000
+DTEND;TZID=Europe/Warsaw:20260717T150000
+SUMMARY:Ślub Gabryśki i Patryka
+LOCATION:Kościół św. Maksymiliana Marii Kolbego, Kraków
+DESCRIPTION:Uroczystość ślubna
+END:VEVENT
+END:VCALENDAR
