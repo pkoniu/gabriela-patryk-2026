@@ -20,7 +20,6 @@
         </a>
         <nav class="nav-right">
           <a href="#rsvp">RSVP</a>
-          <a href="#kontakt">Kontakt</a>
         </nav>
         <button class="nav-toggle" aria-expanded="false" aria-label="Otwórz menu">
           <span class="bars" aria-hidden="true">☰</span>
@@ -31,11 +30,11 @@
   <!-- Mobile menu (hidden on desktop) -->
   <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
     <div class="mobile-menu-inner">
+      <button class="mobile-menu-close" aria-label="Zamknij menu">✕</button>
       <nav class="mobile-nav">
         <a href="#slub">Ślub</a>
         <a href="#wesele">Wesele</a>
         <a href="#rsvp">RSVP</a>
-        <a href="#kontakt">Kontakt</a>
       </nav>
     </div>
   </div>
@@ -62,7 +61,7 @@
     <section class="section countdown-section" aria-live="polite">
       <div class="section-inner">
         <div class="countdown-card">
-          <p class="countdown-label">Do naszego ślubu pozostało</p>
+          <h2 class="section-title">Widzimy się za...</h2>
           <div class="countdown" id="countdown" aria-label="Odliczanie do ślubu">
             <div class="countdown-item"><span class="countdown-value" id="cd-days">0</span><span class="countdown-unit">dni</span></div>
             <div class="countdown-item"><span class="countdown-value" id="cd-hours">0</span><span class="countdown-unit">godz.</span></div>
@@ -76,16 +75,16 @@
     <!-- INTRO SECTION: invitation + photo -->
     <section id="zaproszenie" class="section intro-section">
       <div class="section-inner">
+        <h2 class="section-title">Bądźcie z nami!</h2>
         <div class="intro-grid">
           <div class="intro-card">
-            <h2>Bądźcie z nami!</h2>
             <p class="intro-quote">Kocha się nie za cokolwiek, ale pomimo wszystko, kocha się za nic.</p>
             <p class="muted">Z radością zapraszamy na naszą uroczystość.</p>
             <p class="intro-line"><strong>Data:</strong> 17.07.2026</p>
             <p class="intro-line"><strong>Szczegóły:</strong> Poniżej znajdziecie informacje o ceremonii i przyjęciu.</p>
           </div>
           <div class="intro-image">
-            <img src="https://res.cloudinary.com/gabriela-patryk-2026/image/upload/w_1600,c_fill,g_auto,f_auto,q_auto,dpr_auto,fl_progressive/v1770765298/IMG_1206_sjsvb8.jpg" alt="Gabriela i Patryk" loading="lazy">
+            <img src="https://res.cloudinary.com/gabriela-patryk-2026/image/upload/w_1600,c_fill,g_auto,f_auto,q_auto,dpr_auto,fl_progressive/v1770764972/105_ntxaet.jpg" alt="Gabriela i Patryk" loading="lazy">
           </div>
         </div>
       </div>
@@ -94,9 +93,9 @@
     <!-- INVITATION SHEET 1: church (ecru, black text) -->
     <section id="slub" class="section inv-card inv-ecru">
       <div class="section-inner">
+        <h2 class="section-title">Ślub</h2>
         <div class="inv-grid">
           <div class="card">
-            <h2>Ślub</h2>
             <p class="muted">Miejsce ceremonii</p>
             <p class="venue">Kościół św. Maksymiliana Marii Kolbego, Kraków</p>
             <div class="time-actions">
@@ -114,12 +113,20 @@
     </section>
     <!-- (Kontakt moved into RSVP section per design) -->
 
+    <section class="section photo-section">
+      <div class="section-inner">
+        <div class="section-photo">
+          <img src="https://res.cloudinary.com/gabriela-patryk-2026/image/upload/w_1400,c_fill,g_auto,f_auto,q_auto,dpr_auto,fl_progressive/v1770765298/IMG_1206_sjsvb8.jpg" alt="Gabriela i Patryk" loading="lazy">
+        </div>
+      </div>
+    </section>
+
     <!-- INVITATION SHEET 2: party (grey, black text) -->
     <section id="wesele" class="section inv-card inv-grey">
       <div class="section-inner">
+        <h2 class="section-title">Wesele</h2>
         <div class="inv-grid">
           <div class="card">
-            <h2>Wesele</h2>
             <p class="muted">Miejsce przyjęcia</p>
             <p class="venue">Stary Dwór Poręba Żegoty</p>
             <div class="time-actions">
@@ -139,26 +146,17 @@
     <!-- INVITATION SHEET 3: RSVP + contact + QR (black, white text) -->
     <section id="rsvp" class="section inv-card inv-black">
       <div class="section-inner">
+        <h2 class="section-title">RSVP</h2>
         <div class="card card-dark">
-          <h2>RSVP</h2>
           <p class="muted">Potwierdź swoją obecność</p>
           <div class="rsvp-embed">
             <!-- Replace YOUR_FORM_ID with actual Google Forms embedded link -->
             <iframe title="Formularz RSVP" src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Wczytywanie formularza…</iframe>
           </div>
-
-          <div id="kontakt" class="contact-qr">
-              <div class="contact">
-                <h2>Kontakt</h3>
-                <p>Gabriela: <a href="tel:+48123456789">+48 123 456 789</a></p>
-                <p>Patryk: <a href="tel:+48987654321">+48 987 654 321</a></p>
-                <p>Świadek 1: <a href="tel:+48111222333">+48 111 222 333</a></p>
-                <p>Świadek 2: <a href="tel:+48444555666">+48 444 555 666</a></p>
-              </div>
-          </div>
         </div>
       </div>
     </section>
+
   </main>
   <script>
     // Mobile nav toggle
@@ -166,6 +164,7 @@
       const navToggle = document.querySelector('.nav-toggle');
       const mobileMenu = document.getElementById('mobileMenu');
       const navLinks = document.querySelectorAll('.mobile-nav a');
+      const menuClose = document.querySelector('.mobile-menu-close');
 
       function toggleMenu() {
         const isOpen = mobileMenu.classList.toggle('open');
@@ -176,6 +175,10 @@
 
       if (navToggle && mobileMenu) {
         navToggle.addEventListener('click', toggleMenu);
+      }
+
+      if (menuClose) {
+        menuClose.addEventListener('click', toggleMenu);
       }
 
       // Close menu when a link is clicked
