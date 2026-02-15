@@ -150,6 +150,7 @@ main{padding-top:var(--header-height)}
 .inv-card h2{margin-top:0}
 .section-photo{display:flex;justify-content:center;margin:0 0 1.5rem}
 .section-photo img{width:100%;max-width:520px;height:auto;border-radius:12px;box-shadow:0 12px 28px rgba(62,39,31,0.12);display:block}
+.photo-wide .section-photo img{max-width:900px}
 .card-dark .rsvp-embed{border-color:rgba(62,42,31,0.08)}
 
 
