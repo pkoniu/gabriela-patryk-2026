@@ -178,6 +178,14 @@ main{padding-top:var(--header-height)}
 /* Kontakt section */
 .site-footer{display:none}
 
+/* Prześlij zdjęcia section */
+.photos-section{background:var(--section-beige)}
+.photos-card{max-width:640px;margin:0 auto;text-align:center;background:var(--card);border-radius:16px;padding:2.5rem;box-shadow:0 12px 28px rgba(62,39,31,0.08);border:1px solid rgba(59,39,31,0.08)}
+.photos-card p{margin:0 0 1.5rem}
+.upload-btn{display:inline-flex;align-items:center;justify-content:center;gap:0.6rem;padding:0.9rem 1.75rem;border-radius:999px;border:none;background:var(--accent);color:#fff;font-weight:600;font-size:1.05rem;cursor:pointer;box-shadow:0 10px 22px rgba(154,91,63,0.35);transition:transform .15s ease,box-shadow .15s ease}
+.upload-btn:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(154,91,63,0.45)}
+.upload-btn:active{transform:translateY(0)}
+
 
 @media (min-width:720px){
   .hero{height:80vh}

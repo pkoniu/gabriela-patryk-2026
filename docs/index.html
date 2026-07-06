@@ -20,6 +20,7 @@
         </a>
         <nav class="nav-right">
           <a href="#informacje">Informacje dla gości</a>
+          <a href="#zdjecia">Zdjęcia</a>
         </nav>
         <button class="nav-toggle" aria-expanded="false" aria-label="Otwórz menu">
           <span class="bars" aria-hidden="true">☰</span>
@@ -35,6 +36,7 @@
         <a href="#slub">Ślub</a>
         <a href="#wesele">Wesele</a>
         <a href="#informacje">Informacje dla gości</a>
+        <a href="#zdjecia">Zdjęcia</a>
       </nav>
     </div>
   </div>
@@ -345,8 +347,63 @@
       </div>
     </section>
 
+    <!-- PRZEŚLIJ ZDJĘCIA I FILMY -->
+    <section id="zdjecia" class="section photos-section">
+      <div class="section-inner">
+        <h2 class="section-title">Prześlij zdjęcia i filmy</h2>
+        <div class="photos-card">
+          <p class="muted">Macie fajne ujęcia z naszego wesela? Podzielcie się nimi z nami! Wgrajcie zdjęcia i filmy prosto ze swojego telefonu — bez zakładania konta i instalowania aplikacji.</p>
+          <button type="button" class="upload-btn" id="uploadPhotosBtn">📸 Prześlij zdjęcia / filmy</button>
+        </div>
+      </div>
+    </section>
+
   </main>
+  <script src="https://upload-widget.cloudinary.com/global/all.js"></script>
   <script>
+    // Guest photo/video upload widget (Cloudinary unsigned upload)
+    (function() {
+      const btn = document.getElementById('uploadPhotosBtn');
+      if (!btn || typeof cloudinary === 'undefined') return;
+
+      const widget = cloudinary.createUploadWidget({
+        cloudName: 'gabriela-patryk-2026',
+        uploadPreset: 'wedding-guest-uploads', // unsigned preset, created in Cloudinary console
+        folder: 'guest-uploads',
+        multiple: true,
+        maxFiles: 30,
+        maxFileSize: 200000000, // 200 MB, allows short videos
+        sources: ['local', 'camera'],
+        resourceType: 'auto',
+        language: 'pl',
+        text: {
+          pl: {
+            or: 'lub',
+            menu: { files: 'Z urządzenia', camera: 'Aparat' },
+            local: {
+              browse: 'Wybierz pliki',
+              dd_title_single: 'Przeciągnij tutaj zdjęcie lub film',
+              dd_title_multi: 'Przeciągnij tutaj zdjęcia lub filmy'
+            }
+          }
+        }
+      }, function(error, result) {
+        if (error) {
+          console.error('Upload error:', error);
+          return;
+        }
+        if (result && result.event === 'success') {
+          console.log('Uploaded:', result.info.public_id);
+        }
+        if (result && result.event === 'queues-end') {
+          btn.textContent = '✅ Dziękujemy za przesłane zdjęcia!';
+          setTimeout(() => { btn.textContent = '📸 Prześlij zdjęcia / filmy'; }, 4000);
+        }
+      });
+
+      btn.addEventListener('click', () => widget.open());
+    })();
+
     // Mobile nav toggle
     (function() {
       const navToggle = document.querySelector('.nav-toggle');
