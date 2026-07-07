@@ -404,7 +404,6 @@
       btn.addEventListener('click', () => widget.open());
     })();
 
-    // Mobile nav toggle
     (function() {
       const navToggle = document.querySelector('.nav-toggle');
       const mobileMenu = document.getElementById('mobileMenu');
@@ -426,7 +425,6 @@
         menuClose.addEventListener('click', toggleMenu);
       }
 
-      // Close menu when a link is clicked
       navLinks.forEach(link => {
         link.addEventListener('click', () => {
           if (document.body.classList.contains('mobile-open')) {
@@ -443,7 +441,40 @@
       });
     })();
 
-    // Countdown timer
+    (function() {
+      const anchorLinks = document.querySelectorAll('a[href^="#"]:not([href="#"])');
+
+      anchorLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          const id = link.getAttribute('href').slice(1);
+          const target = document.getElementById(id);
+          if (!target) return;
+
+          e.preventDefault();
+          history.pushState(null, '', '#' + id);
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+          const start = Date.now();
+          const duration = 1500;
+
+          const followUp = () => {
+            const style = getComputedStyle(target);
+            const marginTop = parseFloat(style.scrollMarginTop) || 0;
+            const desiredTop = target.getBoundingClientRect().top + window.scrollY - marginTop;
+
+            if (Math.abs(window.scrollY - desiredTop) > 4) {
+              window.scrollTo({ top: desiredTop, behavior: 'smooth' });
+            }
+
+            if (Date.now() - start < duration) {
+              requestAnimationFrame(followUp);
+            }
+          };
+          requestAnimationFrame(followUp);
+        });
+      });
+    })();
+
     (function() {
       const target = new Date('2026-07-17T14:00:00+02:00').getTime();
       const daysEl = document.getElementById('cd-days');
